@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Modern Monkey - Development Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo glow-text">Meta Modern Monkey</h1>
+            <p class="tagline">Development Studio</p>
+        </div>
+    </header>
+
+    <!-- Filter Navigation -->
+    <nav class="filter-nav">
+        <div class="container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search projects..." aria-label="Search projects">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="apps">Apps</button>
+                <button class="filter-btn" data-filter="websites">Websites</button>
+                <button class="filter-btn" data-filter="games">Games</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Grid -->
+    <main class="main-content">
+        <div class="container">
+            <div class="projects-grid" id="projectsGrid">
+                <!-- App Projects -->
+                <div class="project-card" data-category="apps">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>Task Master Pro</h3>
+                        <p class="project-type">App</p>
+                        <p class="project-desc">Productivity app with AI integration</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="apps">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>Code Snippet Manager</h3>
+                        <p class="project-type">App</p>
+                        <p class="project-desc">Organize and share code snippets</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card coming-soon" data-category="apps">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>Finance Tracker</h3>
+                        <p class="project-type">App</p>
+                        <p class="project-desc">Personal finance management</p>
+                        <span class="coming-soon-badge">Coming Soon</span>
+                    </div>
+                </div>
+
+                <!-- Website Projects -->
+                <div class="project-card" data-category="websites">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>Portfolio Template</h3>
+                        <p class="project-type">Website</p>
+                        <p class="project-desc">Modern developer portfolio</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="websites">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>E-Commerce Starter</h3>
+                        <p class="project-type">Website</p>
+                        <p class="project-desc">Full-featured store template</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card coming-soon" data-category="websites">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>Blog CMS</h3>
+                        <p class="project-type">Website</p>
+                        <p class="project-desc">Content management system</p>
+                        <span class="coming-soon-badge">Coming Soon</span>
+                    </div>
+                </div>
+
+                <!-- Game Projects -->
+                <div class="project-card" data-category="games">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>Neon Runner</h3>
+                        <p class="project-type">Game</p>
+                        <p class="project-desc">Endless runner with synthwave vibes</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="games">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>Puzzle Quest</h3>
+                        <p class="project-type">Game</p>
+                        <p class="project-desc">Brain-teasing puzzle game</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card coming-soon" data-category="games">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <h3>Space Defender</h3>
+                        <p class="project-type">Game</p>
+                        <p class="project-desc">Retro space shooter</p>
+                        <span class="coming-soon-badge">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Email Signup Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2 class="glow-text">Stay Updated</h2>
+            <p>Subscribe to receive updates on new projects and releases</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email" required aria-label="Email address">
+                <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.patreon.com" target="_blank" rel="noopener" class="social-link">
+                    <span>Support on Patreon</span>
+                </a>
+                <a href="https://www.buymeacoffee.com" target="_blank" rel="noopener" class="social-link">
+                    <span>Buy Me a Coffee</span>
+                </a>
+                <a href="mailto:support@metamodernmonkey.com" class="social-link">
+                    <span>Contact Us</span>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2024 Meta Modern Monkey. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
