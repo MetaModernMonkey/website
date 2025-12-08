@@ -36,5 +36,17 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  
+  .text-sharp {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .font-thin-uppercase {
+    font-weight: 100;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: 0.1em;
+  }
 }
 

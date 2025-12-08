@@ -11,16 +11,16 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with synthwave gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-synthwave-dark via-synthwave-darker to-synthwave-dark">
-        <div 
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 100 0 L 0 0 0 100' fill='none' stroke='%2300ffff' stroke-width='0.5' opacity='0.3'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)' /%3E%3C/svg%3E")`,
-            backgroundSize: '100px 100px'
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-synthwave-pink/20 to-transparent"></div>
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="/space-monkeys.png"
+          alt="Space monkeys background"
+          className="w-full h-full object-cover"
+        />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-synthwave-dark/80 via-synthwave-darker/70 to-synthwave-dark/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-synthwave-pink/10 to-transparent"></div>
       </div>
 
       {/* Animated grid lines */}
@@ -32,11 +32,11 @@ export default function Hero() {
       {/* Content */}
       <div className={`relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Logo/Branding */}
-        <div className="mb-8 animate-float">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4">
-            <span className="text-glow-pink text-synthwave-pink">Meta</span>{' '}
-            <span className="text-glow-cyan text-synthwave-cyan">Modern</span>{' '}
-            <span className="text-glow-pink text-synthwave-pink">Monkey</span>
+        <div className="mb-8">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-6xl font-thin-uppercase mb-4 text-sharp">
+            <span className="text-synthwave-pink uppercase drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]">Meta</span>{' '}
+            <span className="text-synthwave-cyan uppercase drop-shadow-[0_0_8px_rgba(0,255,255,0.8)]">Modern</span>{' '}
+            <span className="text-synthwave-pink uppercase drop-shadow-[0_0_8px_rgba(255,0,255,0.8)]">Monkey</span>
           </h1>
         </div>
 
