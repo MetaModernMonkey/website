@@ -7,6 +7,7 @@ import ProjectGrid from '@/components/ProjectGrid';
 import EmailSignup from '@/components/EmailSignup';
 import Support from '@/components/Support';
 import Footer from '@/components/Footer';
+import PerspectiveGrid from '@/components/PerspectiveGrid';
 import projectsData from '@/data/projects.json';
 
 type FilterType = 'all' | 'app' | 'mobile' | 'game' | 'website';
@@ -16,22 +17,25 @@ export default function Home() {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
 
   return (
-    <main className="min-h-screen">
-      <Hero />
-      <Navigation
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-        activeFilter={activeFilter}
-        onFilterChange={setActiveFilter}
-      />
-      <ProjectGrid
-        projects={projectsData}
-        searchQuery={searchQuery}
-        activeFilter={activeFilter}
-      />
-      <EmailSignup />
-      <Support />
-      <Footer />
+    <main className="min-h-screen relative">
+      <PerspectiveGrid />
+      <div className="relative z-10">
+        <Hero />
+        <Navigation
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          activeFilter={activeFilter}
+          onFilterChange={setActiveFilter}
+        />
+        <ProjectGrid
+          projects={projectsData}
+          searchQuery={searchQuery}
+          activeFilter={activeFilter}
+        />
+        <EmailSignup />
+        <Support />
+        <Footer />
+      </div>
     </main>
   );
 }
