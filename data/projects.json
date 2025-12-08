@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Project Alpha",
+    "description": "A delightful mobile app that brings joy to everyday moments.",
+    "tags": ["mobile", "app"],
+    "screenshot": "/screenshots/project-alpha.jpg",
+    "link": "https://example.com/project-alpha",
+    "comingSoon": false
+  },
+  {
+    "id": 2,
+    "name": "Neon Dreams",
+    "description": "An immersive web experience exploring digital landscapes.",
+    "tags": ["web", "website"],
+    "screenshot": "/screenshots/neon-dreams.jpg",
+    "link": "https://example.com/neon-dreams",
+    "comingSoon": false
+  },
+  {
+    "id": 3,
+    "name": "Retro Runner",
+    "description": "A nostalgic game that takes you back to the arcade era.",
+    "tags": ["game"],
+    "screenshot": "/screenshots/retro-runner.jpg",
+    "link": "https://example.com/retro-runner",
+    "comingSoon": true
+  },
+  {
+    "id": 4,
+    "name": "Synth Space",
+    "description": "A web-based music creation tool with synthwave vibes.",
+    "tags": ["web", "website"],
+    "screenshot": "/screenshots/synth-space.jpg",
+    "link": "https://example.com/synth-space",
+    "comingSoon": false
+  },
+  {
+    "id": 5,
+    "name": "Pixel Perfect",
+    "description": "A mobile game combining puzzle mechanics with pixel art aesthetics.",
+    "tags": ["mobile", "game"],
+    "screenshot": "/screenshots/pixel-perfect.jpg",
+    "link": "https://example.com/pixel-perfect",
+    "comingSoon": true
+  },
+  {
+    "id": 6,
+    "name": "Cloud Sync",
+    "description": "A productivity app that keeps your data in sync across devices.",
+    "tags": ["app", "mobile"],
+    "screenshot": "/screenshots/cloud-sync.jpg",
+    "link": "https://example.com/cloud-sync",
+    "comingSoon": false
+  }
+]
+
