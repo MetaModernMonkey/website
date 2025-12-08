@@ -85,34 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
             animation: slideInRight 0.5s ease-out, fadeOut 0.5s ease-out 2.5s forwards;
         `;
 
-        // Add animation styles
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideInRight {
-                from {
-                    transform: translateX(400px);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-            @keyframes fadeOut {
-                to {
-                    opacity: 0;
-                    transform: translateX(400px);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
         document.body.appendChild(notification);
 
         // Remove notification after 3 seconds
         setTimeout(() => {
             notification.remove();
-            style.remove();
         }, 3000);
     }
 
@@ -130,9 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add parallax effect to background grid
+    // Add parallax effect to background grid with throttling
     let lastScrollTop = 0;
-    window.addEventListener('scroll', () => {
+    let ticking = false;
+
+    function updateParallax() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         const delta = scrollTop - lastScrollTop;
         
@@ -146,6 +125,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         lastScrollTop = scrollTop;
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
     });
 
     // Add hover effect sound (visual feedback)
