@@ -408,13 +408,17 @@ body::before {
     filter: blur(10px);
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card:focus {
     transform: translateY(-10px) scale(1.02);
     border-color: var(--accent-cyan);
     box-shadow: 0 15px 40px rgba(0, 245, 255, 0.3);
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 3px;
 }
 
-.project-card:hover .card-glow {
+.project-card:hover .card-glow,
+.project-card:focus .card-glow {
     opacity: 0.6;
     animation: rotateGlow 3s linear infinite;
 }
