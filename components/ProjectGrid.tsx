@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FilterType, Project } from '@/app/page';
+import { trackProjectClick } from '@/lib/analytics';
 
 interface ProjectGridProps {
   projects: Project[];
@@ -116,6 +117,7 @@ export default function ProjectGrid({ projects, searchQuery, activeFilter }: Pro
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackProjectClick({ id: project.id, name: project.name, link: project.link })}
                       className="inline-flex items-center text-synthwave-pink hover:text-synthwave-cyan transition-colors duration-300 text-sm font-medium"
                     >
                       View Project

@@ -1,6 +1,7 @@
 'use client';
 
 import { FilterType } from '@/app/page';
+import { trackFilterSelect } from '@/lib/analytics';
 import { Gamepad2, Globe2, LucideIcon, Search, Smartphone } from 'lucide-react';
 
 interface NavigationProps {
@@ -55,9 +56,12 @@ export default function Navigation({ searchQuery, onSearchChange, activeFilter, 
                 >
                   {filter.icon && <filter.icon className="w-4 h-4" aria-hidden />}
                   {filter.label}
-                </button>
-              );
-            })}
+                <button
+                  key={filter.value}
+                  onClick={() => {
+                    trackFilterSelect(filter.value);
+                    onFilterChange(filter.value);
+                  }}
           </div>
         </div>
       </div>
