@@ -1,57 +1,145 @@
 [
   {
-    "id": 1,
-    "name": "Project Alpha",
-    "description": "A delightful mobile app that brings joy to everyday moments.",
-    "tags": ["mobile", "app"],
-    "screenshot": "/screenshots/project-alpha.jpg",
-    "link": "https://example.com/project-alpha",
-    "comingSoon": false
+    "id": "numbers-go-up",
+    "name": "Numbers Go Up",
+    "description": "A calendar for numberphiles",
+    "tags": [
+      "app"
+    ],
+    "screenshot": "/screenshots/numbers-go-up.jpg",
+    "link": "https://example.com/numbers-go-up",
+    "comingSoon": false,
+    "created": "2024-01-15",
+    "updated": "2025-12-08"
   },
   {
-    "id": 2,
-    "name": "Neon Dreams",
-    "description": "An immersive web experience exploring digital landscapes.",
-    "tags": ["web", "website"],
-    "screenshot": "/screenshots/neon-dreams.jpg",
-    "link": "https://example.com/neon-dreams",
-    "comingSoon": false
+    "id": "spotifun",
+    "name": "Spotifun",
+    "description": "Fun with your Spotify habits",
+    "tags": [
+      "app"
+    ],
+    "screenshot": "/screenshots/spotifun.jpg",
+    "link": "https://example.com/spotifun",
+    "comingSoon": false,
+    "created": "2024-03-22",
+    "updated": "2025-12-08"
   },
   {
-    "id": 3,
-    "name": "Retro Runner",
-    "description": "A nostalgic game that takes you back to the arcade era.",
-    "tags": ["game"],
-    "screenshot": "/screenshots/retro-runner.jpg",
-    "link": "https://example.com/retro-runner",
-    "comingSoon": true
+    "id": "pulsar",
+    "name": "Pulsar",
+    "description": "Personalized workouts simplified",
+    "tags": [
+      "app"
+    ],
+    "screenshot": "/screenshots/pulsar.jpg",
+    "link": "https://example.com/pulsar",
+    "comingSoon": false,
+    "created": "2024-05-10",
+    "updated": "2025-12-08"
   },
   {
-    "id": 4,
-    "name": "Synth Space",
-    "description": "A web-based music creation tool with synthwave vibes.",
-    "tags": ["web", "website"],
-    "screenshot": "/screenshots/synth-space.jpg",
-    "link": "https://example.com/synth-space",
-    "comingSoon": false
+    "id": "shrapnel-city",
+    "name": "Shrapnel City",
+    "description": "",
+    "tags": [
+      "game"
+    ],
+    "screenshot": "/screenshots/shrapnel-city.jpg",
+    "link": "https://example.com/shrapnel-city",
+    "comingSoon": true,
+    "created": "2024-06-18",
+    "updated": "2025-12-08"
   },
   {
-    "id": 5,
-    "name": "Pixel Perfect",
-    "description": "A mobile game combining puzzle mechanics with pixel art aesthetics.",
-    "tags": ["mobile", "game"],
-    "screenshot": "/screenshots/pixel-perfect.jpg",
-    "link": "https://example.com/pixel-perfect",
-    "comingSoon": true
+    "id": "tracer",
+    "name": "Tracer",
+    "description": "Track anything, everywhere, all at once",
+    "tags": [
+      "app"
+    ],
+    "screenshot": "/screenshots/tracer.jpg",
+    "link": "https://example.com/tracer",
+    "comingSoon": false,
+    "created": "2024-07-25",
+    "updated": "2025-12-08"
   },
   {
-    "id": 6,
-    "name": "Cloud Sync",
-    "description": "A productivity app that keeps your data in sync across devices.",
-    "tags": ["app", "mobile"],
-    "screenshot": "/screenshots/cloud-sync.jpg",
-    "link": "https://example.com/cloud-sync",
-    "comingSoon": false
+    "id": "streakaholic",
+    "name": "Streakaholic",
+    "description": "For your streak addiction",
+    "tags": [
+      "app"
+    ],
+    "screenshot": "/screenshots/streakaholic.jpg",
+    "link": "https://example.com/streakaholic",
+    "comingSoon": false,
+    "created": "2024-08-30",
+    "updated": "2025-12-08"
+  },
+  {
+    "id": "tadai",
+    "name": "Tadai",
+    "description": "A todo list for ADHD",
+    "tags": [
+      "app"
+    ],
+    "screenshot": "/screenshots/tadai.jpg",
+    "link": "https://example.com/tadai",
+    "comingSoon": false,
+    "created": "2024-09-12",
+    "updated": "2025-12-08"
+  },
+  {
+    "id": "space-cowboys",
+    "name": "Space Cowboys",
+    "description": "Wrangle the final frontier",
+    "tags": [
+      "game"
+    ],
+    "screenshot": "/screenshots/space-cowboys.jpg",
+    "link": "https://example.com/space-cowboys",
+    "comingSoon": true,
+    "created": "2024-10-05",
+    "updated": "2025-12-08"
+  },
+  {
+    "id": "arborist",
+    "name": "Arborist",
+    "description": "View and edit tree data (XML, JSON, YAML, etc)",
+    "tags": [
+      "app"
+    ],
+    "screenshot": "/screenshots/arborist.jpg",
+    "link": "https://example.com/arborist",
+    "comingSoon": false,
+    "created": "2024-11-14",
+    "updated": "2025-12-08"
+  },
+  {
+    "id": "memory-lane",
+    "name": "Memory Lane",
+    "description": "Memory matching from your memories",
+    "tags": [
+      "game"
+    ],
+    "screenshot": "/screenshots/memory-lane.jpg",
+    "link": "https://example.com/memory-lane",
+    "comingSoon": true,
+    "created": "2024-12-01",
+    "updated": "2025-12-08"
+  },
+  {
+    "id": "personame",
+    "name": "Personame",
+    "description": "Create your own personality quiz",
+    "tags": [
+      "website"
+    ],
+    "screenshot": "/screenshots/personame.jpg",
+    "link": "https://example.com/personame",
+    "comingSoon": false,
+    "created": "2025-01-08",
+    "updated": "2025-12-08"
   }
 ]
-

@@ -2,18 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-
-type FilterType = 'all' | 'app' | 'mobile' | 'game' | 'website';
-
-interface Project {
-  id: number;
-  name: string;
-  description: string;
-  tags: string[];
-  screenshot: string;
-  link: string;
-  comingSoon: boolean;
-}
+import { FilterType, Project } from '@/app/page';
 
 interface ProjectGridProps {
   projects: Project[];
@@ -32,9 +21,6 @@ export default function ProjectGrid({ projects, searchQuery, activeFilter }: Pro
       filtered = filtered.filter((project) => {
         if (activeFilter === 'app') {
           return project.tags.includes('app');
-        }
-        if (activeFilter === 'mobile') {
-          return project.tags.includes('mobile');
         }
         if (activeFilter === 'game') {
           return project.tags.includes('game');

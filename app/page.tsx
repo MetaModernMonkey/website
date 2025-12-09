@@ -10,7 +10,9 @@ import Footer from '@/components/Footer';
 import PerspectiveGrid from '@/components/PerspectiveGrid';
 import projectsData from '@/data/projects.json';
 
-type FilterType = 'all' | 'app' | 'mobile' | 'game' | 'website';
+export type FilterType = 'all' | 'app' | 'game' | 'website';
+
+export type Project = typeof projectsData[number];
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');

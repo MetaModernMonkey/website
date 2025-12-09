@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-
-type FilterType = 'all' | 'app' | 'mobile' | 'game' | 'website';
+import { FilterType } from '@/app/page';
+import { Gamepad2, Globe2, LucideIcon, Search, Smartphone } from 'lucide-react';
 
 interface NavigationProps {
   searchQuery: string;
@@ -11,13 +10,14 @@ interface NavigationProps {
   onFilterChange: (filter: FilterType) => void;
 }
 
+type FilterOption = { value: FilterType; label: string; icon?: LucideIcon };
+
 export default function Navigation({ searchQuery, onSearchChange, activeFilter, onFilterChange }: NavigationProps) {
-  const filters: { value: FilterType; label: string }[] = [
+  const filters: FilterOption[] = [
     { value: 'all', label: 'All' },
-    { value: 'app', label: 'Apps' },
-    { value: 'mobile', label: 'Mobile' },
-    { value: 'game', label: 'Games' },
-    { value: 'website', label: 'Websites' },
+    { value: 'app', label: 'Apps', icon: Smartphone },
+    { value: 'game', label: 'Games', icon: Gamepad2 },
+    { value: 'website', label: 'Websites', icon: Globe2 },
   ];
 
   return (
@@ -34,28 +34,31 @@ export default function Navigation({ searchQuery, onSearchChange, activeFilter, 
               className="w-full px-4 py-3 bg-synthwave-darker/50 border border-synthwave-cyan/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-synthwave-cyan focus:border-glow-cyan transition-all duration-300"
             />
             <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-synthwave-cyan">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+              <Search className="w-5 h-5" aria-hidden />
             </div>
           </div>
         </div>
 
         {/* Filter Toggles */}
-        <div className="flex flex-wrap gap-2 justify-center">
-          {filters.map((filter) => (
-            <button
-              key={filter.value}
-              onClick={() => onFilterChange(filter.value)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                activeFilter === filter.value
-                  ? 'bg-synthwave-pink text-white border-glow-pink border border-synthwave-pink'
-                  : 'bg-synthwave-darker/50 text-gray-300 border border-synthwave-cyan/20 hover:border-synthwave-cyan/50'
-              }`}
-            >
-              {filter.label}
-            </button>
-          ))}
+        <div className="flex justify-center">
+          <div className="inline-flex items-center rounded-full bg-synthwave-darker/70 border border-synthwave-cyan/30 shadow-synthwave shadow-sm p-1 backdrop-blur-md">
+            {filters.map((filter) => {
+              const isActive = activeFilter === filter.value;
+              return (
+                <button
+                  key={filter.value}
+                  onClick={() => onFilterChange(filter.value)}
+                  className={`px-4 py-2 rounded-full font-medium transition-all duration-300 inline-flex items-center gap-2 justify-center ${isActive
+                    ? 'bg-synthwave-pink text-white shadow-lg shadow-synthwave-pink/30'
+                    : 'text-gray-200 hover:text-white hover:bg-synthwave-darker/40'
+                    }`}
+                >
+                  {filter.icon && <filter.icon className="w-4 h-4" aria-hidden />}
+                  {filter.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </nav>
