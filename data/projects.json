@@ -6,9 +6,9 @@
     "tags": [
       "app"
     ],
-    "screenshot": "/screenshots/numbers-go-up.jpg",
-    "link": "https://example.com/numbers-go-up",
-    "comingSoon": false,
+    "screenshot": "/screenshots/numbers-go-up.png",
+    "link": "https://numbers.metamodernmonkey.com",
+    "comingSoon": true,
     "created": "2024-01-15",
     "updated": "2025-12-08"
   },
@@ -19,9 +19,9 @@
     "tags": [
       "app"
     ],
-    "screenshot": "/screenshots/spotifun.jpg",
-    "link": "https://example.com/spotifun",
-    "comingSoon": false,
+    "screenshot": "/screenshots/spotifun.png",
+    "link": "https://spotifun.metamodernmonkey.com",
+    "comingSoon": true,
     "created": "2024-03-22",
     "updated": "2025-12-08"
   },
@@ -32,9 +32,9 @@
     "tags": [
       "app"
     ],
-    "screenshot": "/screenshots/pulsar.jpg",
-    "link": "https://example.com/pulsar",
-    "comingSoon": false,
+    "screenshot": "/screenshots/pulsar.png",
+    "link": "https://pulsar.metamodernmonkey.com",
+    "comingSoon": true,
     "created": "2024-05-10",
     "updated": "2025-12-08"
   },
@@ -45,8 +45,8 @@
     "tags": [
       "game"
     ],
-    "screenshot": "/screenshots/shrapnel-city.jpg",
-    "link": "https://example.com/shrapnel-city",
+    "screenshot": "/screenshots/shrapnel-city2.png",
+    "link": "https://shrapnel-city.metamodernmonkey.com",
     "comingSoon": true,
     "created": "2024-06-18",
     "updated": "2025-12-08"
@@ -58,9 +58,9 @@
     "tags": [
       "app"
     ],
-    "screenshot": "/screenshots/tracer.jpg",
-    "link": "https://example.com/tracer",
-    "comingSoon": false,
+    "screenshot": "/screenshots/tracer.png",
+    "link": "https://tracer.metamodernmonkey.com",
+    "comingSoon": true,
     "created": "2024-07-25",
     "updated": "2025-12-08"
   },
@@ -71,9 +71,9 @@
     "tags": [
       "app"
     ],
-    "screenshot": "/screenshots/streakaholic.jpg",
-    "link": "https://example.com/streakaholic",
-    "comingSoon": false,
+    "screenshot": "/screenshots/streakaholic.png",
+    "link": "https://streakaholic.metamodernmonkey.com",
+    "comingSoon": true,
     "created": "2024-08-30",
     "updated": "2025-12-08"
   },
@@ -84,9 +84,9 @@
     "tags": [
       "app"
     ],
-    "screenshot": "/screenshots/tadai.jpg",
-    "link": "https://example.com/tadai",
-    "comingSoon": false,
+    "screenshot": "/screenshots/tadai.png",
+    "link": "https://tadai.metamodernmonkey.com",
+    "comingSoon": true,
     "created": "2024-09-12",
     "updated": "2025-12-08"
   },
@@ -97,8 +97,8 @@
     "tags": [
       "game"
     ],
-    "screenshot": "/screenshots/space-cowboys.jpg",
-    "link": "https://example.com/space-cowboys",
+    "screenshot": "/screenshots/space-cowboys.png",
+    "link": "https://space-cowboys.metamodernmonkey.com",
     "comingSoon": true,
     "created": "2024-10-05",
     "updated": "2025-12-08"
@@ -110,8 +110,8 @@
     "tags": [
       "app"
     ],
-    "screenshot": "/screenshots/arborist.jpg",
-    "link": "https://example.com/arborist",
+    "screenshot": "/screenshots/arborist.png",
+    "link": "https://arborist.metamodernmonkey.com",
     "comingSoon": false,
     "created": "2024-11-14",
     "updated": "2025-12-08"
@@ -123,8 +123,8 @@
     "tags": [
       "game"
     ],
-    "screenshot": "/screenshots/memory-lane.jpg",
-    "link": "https://example.com/memory-lane",
+    "screenshot": "/screenshots/memory-lane.png",
+    "link": "https://memory-lane.metamodernmonkey.com",
     "comingSoon": true,
     "created": "2024-12-01",
     "updated": "2025-12-08"
@@ -136,10 +136,23 @@
     "tags": [
       "website"
     ],
-    "screenshot": "/screenshots/personame.jpg",
-    "link": "https://example.com/personame",
-    "comingSoon": false,
+    "screenshot": "/screenshots/personame.png",
+    "link": "https://personame.metamodernmonkey.com",
+    "comingSoon": true,
     "created": "2025-01-08",
+    "updated": "2025-12-08"
+  },
+  {
+    "id": "HexSweeper",
+    "name": "HexSweeper",
+    "description": "A hexagonal twist on the classic minesweeper game",
+    "tags": [
+      "game"
+    ],
+    "screenshot": "/screenshots/hexsweeper.png",
+    "link": "https://hexsweeper.metamodernmonkey.com",
+    "comingSoon": true,
+    "created": "2025-02-14",
     "updated": "2025-12-08"
   }
 ]
