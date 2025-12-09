@@ -35,4 +35,4 @@ export function trackProjectClick({
   });
 }
 
-export {};
+export { };
