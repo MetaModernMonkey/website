@@ -56,15 +56,12 @@ export default function Navigation({ searchQuery, onSearchChange, activeFilter, 
                 >
                   {filter.icon && <filter.icon className="w-4 h-4" aria-hidden />}
                   {filter.label}
-                  <button
-                    key={filter.value}
-                    onClick={() => {
-                      trackFilterSelect(filter.value);
-                      onFilterChange(filter.value);
-                    }}
+                </button>
+              );
+            })}
           </div>
         </div>
-        </div>
+      </div>
     </nav>
   );
 }
