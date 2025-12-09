@@ -4,15 +4,39 @@ import { useState } from 'react';
 
 export default function EmailSignup() {
   const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would integrate with your email service (e.g., Mailchimp, ConvertKit, etc.)
-    // For now, we'll just show a success message
-    setStatus('success');
-    setEmail('');
-    setTimeout(() => setStatus('idle'), 3000);
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setStatus('error');
+        setErrorMessage(data.error || 'Something went wrong. Please try again.');
+        return;
+      }
+
+      setStatus('success');
+      setEmail('');
+      setTimeout(() => setStatus('idle'), 3000);
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage('Something went wrong. Please try again.');
+      console.error('Subscribe error:', error);
+    }
   };
 
   return (
@@ -32,13 +56,15 @@ export default function EmailSignup() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
-            className="flex-1 px-4 py-3 bg-synthwave-darker/50 border border-synthwave-cyan/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-synthwave-cyan focus:border-glow-cyan transition-all duration-300"
+            disabled={status === 'loading'}
+            className="flex-1 px-4 py-3 bg-synthwave-darker/50 border border-synthwave-cyan/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-synthwave-cyan focus:border-glow-cyan transition-all duration-300 disabled:opacity-50"
           />
           <button
             type="submit"
-            className="px-6 py-3 bg-gradient-to-r from-synthwave-pink to-synthwave-purple text-white font-semibold rounded-lg hover:from-synthwave-purple hover:to-synthwave-pink transition-all duration-300 border-glow-pink"
+            disabled={status === 'loading'}
+            className="px-6 py-3 bg-gradient-to-r from-synthwave-pink to-synthwave-purple text-white font-semibold rounded-lg hover:from-synthwave-purple hover:to-synthwave-pink transition-all duration-300 border-glow-pink disabled:opacity-50"
           >
-            Subscribe
+            {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
           </button>
         </form>
 
@@ -49,7 +75,7 @@ export default function EmailSignup() {
         )}
         {status === 'error' && (
           <p className="mt-4 text-red-400 animate-fade-in">
-            Something went wrong. Please try again.
+            {errorMessage}
           </p>
         )}
       </div>
