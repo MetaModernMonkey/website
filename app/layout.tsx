@@ -7,6 +7,9 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-9E5T65
 export const metadata: Metadata = {
   title: "Meta Modern Monkey",
   description: "Small, sincere, and slightly strange digital experiences—playful things made with equal parts curiosity and care.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
