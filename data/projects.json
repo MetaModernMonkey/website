@@ -78,14 +78,14 @@
     "updated": "2025-12-08"
   },
   {
-    "id": "tadai",
-    "name": "Tadai",
+    "id": "todai",
+    "name": "Todai",
     "description": "A todo list for ADHD",
     "tags": [
       "app"
     ],
-    "screenshot": "/screenshots/tadai.png",
-    "link": "https://tadai.metamodernmonkey.com",
+    "screenshot": "/screenshots/todai.png",
+    "link": "https://todai.metamodernmonkey.com",
     "comingSoon": true,
     "created": "2024-09-12",
     "updated": "2025-12-08"
