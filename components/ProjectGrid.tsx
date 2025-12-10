@@ -119,6 +119,47 @@ export default function ProjectGrid({ projects, searchQuery, activeFilter }: Pro
                 </div>
               </div>
             ))}
+
+            {/* Your Idea Placeholder */}
+            <a
+              href="mailto:support@metamodernmonkey.com?subject=App%20Idea"
+              className="group relative bg-synthwave-dark/20 border border-synthwave-cyan/10 border-dashed rounded-lg overflow-hidden hover:border-synthwave-pink/30 hover:bg-synthwave-dark/30 transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: `${filteredProjects.length * 0.1}s` }}
+            >
+              {/* Icon Area */}
+              <div className="relative h-48 bg-synthwave-darker/30 overflow-hidden flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-synthwave-pink/10 to-synthwave-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <svg className="w-16 h-16 text-synthwave-cyan/20 group-hover:text-synthwave-cyan/40 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                </svg>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-xl font-bold text-white/50 group-hover:text-synthwave-cyan/70 transition-colors duration-300">
+                    Your Idea
+                  </h3>
+                </div>
+
+                <p className="text-gray-400/60 text-sm mb-4">Have an app or game idea? Share it with us and we might build it!</p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-2 py-1 text-xs bg-synthwave-darker/30 text-synthwave-cyan/50 border border-synthwave-cyan/20 rounded">
+                    suggestion
+                  </span>
+                </div>
+
+                {/* Link */}
+                <span className="inline-flex items-center text-synthwave-pink/60 group-hover:text-synthwave-cyan/70 transition-colors duration-300 text-sm font-medium">
+                  Send Idea
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </span>
+              </div>
+            </a>
           </div>
         )}
       </div>
