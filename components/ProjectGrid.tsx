@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import Image from 'next/image';
 import { FilterType, Project } from '@/app/page';
 import { trackProjectClick } from '@/lib/analytics';
@@ -12,28 +12,18 @@ interface ProjectGridProps {
 }
 
 export default function ProjectGrid({ projects, searchQuery, activeFilter }: ProjectGridProps) {
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
-
-  useEffect(() => {
+  const filteredProjects = useMemo(() => {
     let filtered = projects;
 
-    // Filter by category
     if (activeFilter !== 'all') {
       filtered = filtered.filter((project) => {
-        if (activeFilter === 'app') {
-          return project.tags.includes('app');
-        }
-        if (activeFilter === 'game') {
-          return project.tags.includes('game');
-        }
-        if (activeFilter === 'website') {
-          return project.tags.includes('web') || project.tags.includes('website');
-        }
+        if (activeFilter === 'app') return project.tags.includes('app');
+        if (activeFilter === 'game') return project.tags.includes('game');
+        if (activeFilter === 'website') return project.tags.includes('web') || project.tags.includes('website');
         return true;
       });
     }
 
-    // Filter by search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(
@@ -44,7 +34,7 @@ export default function ProjectGrid({ projects, searchQuery, activeFilter }: Pro
       );
     }
 
-    setFilteredProjects(filtered);
+    return filtered;
   }, [projects, searchQuery, activeFilter]);
 
   return (
