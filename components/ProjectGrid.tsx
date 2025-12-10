@@ -144,13 +144,6 @@ export default function ProjectGrid({ projects, searchQuery, activeFilter }: Pro
 
                 <p className="text-gray-400/60 text-sm mb-4">Have an app or game idea? Share it with us and we might build it!</p>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-2 py-1 text-xs bg-synthwave-darker/30 text-synthwave-cyan/50 border border-synthwave-cyan/20 rounded">
-                    suggestion
-                  </span>
-                </div>
-
                 {/* Link */}
                 <span className="inline-flex items-center text-synthwave-pink/60 group-hover:text-synthwave-cyan/70 transition-colors duration-300 text-sm font-medium">
                   Send Idea
