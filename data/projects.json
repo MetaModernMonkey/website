@@ -1,5 +1,18 @@
 [
   {
+    "id": "oregon-trail-cards",
+    "name": "Oregon Trail Cards",
+    "description": "Head west, card edition",
+    "tags": [
+      "game"
+    ],
+    "screenshot": "/screenshots/oregon-trail-cards.png",
+    "link": "https://oregon.metamodernmonkey.com",
+    "comingSoon": false,
+    "created": "2026-10-25",
+    "updated": "2026-10-25"
+  },
+  {
     "id": "numbers-go-up",
     "name": "Numbers Go Up",
     "description": "A calendar for numberphiles",
