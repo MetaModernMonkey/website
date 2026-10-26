@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import { FilterType, Project } from '@/app/page';
 import { trackProjectClick } from '@/lib/analytics';
@@ -12,6 +13,27 @@ interface ProjectGridProps {
 }
 
 export default function ProjectGrid({ projects, searchQuery, activeFilter }: ProjectGridProps) {
+  const reducedMotion = useReducedMotion();
+  const gridRef = useRef<HTMLDivElement>(null);
+  const [gridHeight, setGridHeight] = useState<number>();
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+    const observer = new ResizeObserver(([entry]) => setGridHeight(entry.contentRect.height));
+    observer.observe(grid);
+    return () => observer.disconnect();
+  }, []);
+  const cardMotion = (index: number) => ({
+    layout: 'position' as const,
+    initial: { opacity: 0, y: reducedMotion ? 0 : 14 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: reducedMotion ? 0 : -6, transition: { duration: reducedMotion ? 0 : 0.16 } },
+    transition: {
+      opacity: { duration: reducedMotion ? 0 : 0.24, delay: reducedMotion ? 0 : Math.min(index * 0.035, 0.18) },
+      y: { duration: reducedMotion ? 0 : 0.32, delay: reducedMotion ? 0 : Math.min(index * 0.035, 0.18) },
+      layout: { duration: reducedMotion ? 0 : 0.4, ease: [0.22, 1, 0.36, 1] as const },
+    },
+  });
   const filteredProjects = useMemo(() => {
     let filtered = projects;
 
@@ -40,17 +62,20 @@ export default function ProjectGrid({ projects, searchQuery, activeFilter }: Pro
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {filteredProjects.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-xl text-gray-400">No projects found matching your criteria.</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <motion.div initial={false} animate={{ height: gridHeight ?? 'auto' }} transition={{ duration: reducedMotion ? 0 : 0.4, ease: [0.22, 1, 0.36, 1] }}>
+          <div ref={gridRef} className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.length === 0 && (
+              <motion.div key="empty-results" {...cardMotion(0)} className="col-span-full text-center py-20" role="status">
+                <p className="text-xl text-gray-400">No projects found matching your criteria.</p>
+              </motion.div>
+            )}
             {filteredProjects.map((project, index) => (
-              <div
+              <motion.div
                 key={project.id}
-                className="group relative bg-synthwave-dark/50 border border-synthwave-cyan/20 rounded-lg overflow-hidden hover:border-synthwave-pink/50 transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                {...cardMotion(index)}
+                data-project-card={project.id}
+                className="group relative bg-synthwave-dark/50 border border-synthwave-cyan/20 rounded-lg overflow-hidden hover:border-synthwave-pink/50 transition-colors duration-300"
               >
                 {/* Screenshot */}
                 <div className="relative h-48 bg-synthwave-darker overflow-hidden">
@@ -117,14 +142,15 @@ export default function ProjectGrid({ projects, searchQuery, activeFilter }: Pro
                     </a>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
 
             {/* Your Idea Placeholder */}
-            <a
+            {filteredProjects.length > 0 && <motion.a
+              key="your-idea"
+              {...cardMotion(filteredProjects.length)}
               href="mailto:support@metamodernmonkey.com?subject=App%20Idea"
-              className="group relative bg-synthwave-dark/20 border border-synthwave-cyan/10 border-dashed rounded-lg overflow-hidden hover:border-synthwave-pink/30 hover:bg-synthwave-dark/30 transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${filteredProjects.length * 0.1}s` }}
+              className="group relative bg-synthwave-dark/20 border border-synthwave-cyan/10 border-dashed rounded-lg overflow-hidden hover:border-synthwave-pink/30 hover:bg-synthwave-dark/30 transition-colors duration-300"
             >
               {/* Icon Area */}
               <div className="relative h-48 bg-synthwave-darker/30 overflow-hidden flex items-center justify-center">
@@ -152,9 +178,10 @@ export default function ProjectGrid({ projects, searchQuery, activeFilter }: Pro
                   </svg>
                 </span>
               </div>
-            </a>
+            </motion.a>}
+          </AnimatePresence>
           </div>
-        )}
+        </motion.div>
       </div>
     </section>
   );
